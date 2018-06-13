@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body {
+  width: 1024px;
+  height: 600px;
+  background-color: #ffffdd;
+}
+
+#messages-container {
+  width: 1024px;
+  height:450px;
+}
+
+#messages {
+  vertical-align: bottom;
+  position: relative;
+}
+
+#input-bar {
+  width: 1024px;
+  top: 475px;
+}

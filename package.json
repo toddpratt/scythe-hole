@@ -10,7 +10,11 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.18.3",
+    "express": "^4.15.3",
+    "request": "^2.87.0",
+    "sqlite3": "^4.0.0",
+    "uuid": "^3.2.1"
   },
   "engines": {
     "node": "8.1.x"
