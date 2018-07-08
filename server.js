@@ -1,6 +1,6 @@
 
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser ');
 const request = require('request');
 
 
@@ -8,7 +8,7 @@ class MessageList {
   constructor() {
     this.messages = [];
   }
-  
+
   add(nick, message) {
     var timestamp = new Date();
     this.messages.push({nick, message, timestamp});
@@ -21,8 +21,10 @@ class MessageList {
 var channels = {};
 const app = express();
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+// for parsing application/json
+app.use(bodyParser.json());
+// for parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get("/:id", function (req, res) {
@@ -37,7 +39,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/messages/:id", (req, res, next) => {
-  var id = "abc";
+  var id = res.params.id;
   if(!id || !channels[id]) {
     res.status(500).send("channel not found");
     return;
